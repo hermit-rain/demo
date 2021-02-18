@@ -1,4 +1,5 @@
-package com.google;
+package com.google.collection;
+
 
 import java.util.TreeSet;
 
@@ -10,7 +11,7 @@ import java.util.TreeSet;
  * TreeSet支持两种排序方法：自然排序和定制排序
  */
 public class TreeSetTest {
-    private static Iterable<? extends Object> StuInformation;
+
 
     public static void main(String[] args){
 
@@ -35,6 +36,7 @@ public class TreeSetTest {
         stuInformation.add(new Person("李四",20));
         stuInformation.add(new Person("刘红",25));
         stuInformation.add(new Person("小明",30));
+
 
         stuInformation.forEach(obj->System.out.println("集合的元素是："+ obj.hashCode()));
 
@@ -68,6 +70,18 @@ public class TreeSetTest {
             return "age"+age;
         }
 
+    }
+
+}
+class Person{
+
+    String name;
+    int age;
+
+    //定义构造器
+    public  Person(String name, int age) {
+        this.name = name;
+        this.age = age;
     }
 
 }
