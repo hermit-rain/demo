@@ -12,13 +12,15 @@ public class CheckedExceptionTest {
         try {
             //调用声明抛出Checked异常的方法,要么显式捕获该异常,要么在main方法中再次声明抛出
             throwsChecked(1);
+            //此处的异常将不会被抛出 ===> catch块一旦捕获异常try块将停止运行
+            throwsRuntime(4);
+
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
             e.printStackTrace();
         }
         //此处的throwsRuntime方法的不同位置的结果不同
-        throwsRuntime(4);
     }
 
     public static void throwsChecked (int a)throws Exception{

@@ -10,7 +10,6 @@ import java.util.Date;
  * 单异常捕获、多异常捕获、以及异常的访问异常信息处理
  *
  * try（）catch{}块
-
  */
 
 public class ExceptionTest {
