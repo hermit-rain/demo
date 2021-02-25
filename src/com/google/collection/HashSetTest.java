@@ -15,7 +15,7 @@ import java.util.LinkedHashSet;
  * 集合元素值可以是null
  *
  * 向HasSet集合中存入对象的时候首先通过equal()方法判断两个对象的字符串值是否相等；
- * 若不等然后调用HasSet放法得到他们的hasCode值并通过他们的hasCode值进行存储
+ * 若不等然后调用HasSet方法得到他们的hasCode值并通过他们的hasCode值进行存储
  * 存入对象的时候不能存入不同数据类型的数据因为他们不能通过equal（）方法进行比较
  * 并且存入的对象唯一不可重复
  *

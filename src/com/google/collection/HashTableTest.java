@@ -62,6 +62,8 @@ class A{
         return this.count;
     }
 
+
+
 }
 //重写equals()方法 B对象与任何对象通过equals()方法比较都返回true
 class B{
