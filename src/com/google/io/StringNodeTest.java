@@ -21,7 +21,7 @@ public class StringNodeTest {
         char[] cbuf = new char[32];
         int hasRead = 0;
         try (
-                StringReader sr = new StringReader("src") )
+                StringReader sr = new StringReader(str) )
         {
             while((hasRead= sr.read(cbuf)) > 0){
                 System.out.println(new String(cbuf,0,hasRead));
