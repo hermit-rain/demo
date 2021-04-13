@@ -1,6 +1,8 @@
 package com.google.reflection;
 
+import java.lang.reflect.Constructor;
 import java.lang.reflect.Modifier;
+import java.util.Arrays;
 
 /**
  * 描述java反射
@@ -37,19 +39,47 @@ public class Alunbar {
         System.out.println(Modifier.isPrivate(birdClass.getModifiers())); //true
 
         //获取包信息
-        System.out.println(birdClass.getPackage());
+        System.out.println(birdClass.getPackage()); //package com.google.reflection
 
+        //获取Bird父类的Class对象
+        //getSuperclass() ==> 返回父类的Class对象
+        Class superClass = birdClass.getSuperclass();
+        System.out.println(superClass.getSimpleName()); //Animal
+
+        //获取接口信息
+        //getInterfaces() ==> 返回指定类实现的接口 并不返父类实现的接口
+        Class[] interfaces = birdClass.getInterfaces();
+        System.out.println(Arrays.toString(interfaces)); // []
+
+
+        //获取构造参数Constructor
+        //getConstructors() ==> 返回所有声明的用public修饰的构造函数
+        Constructor[] constructors = birdClass.getConstructors();
+        //[public com.google.reflection.Alunbar$Bird(com.google.reflection.Alunbar), public com.google.reflection.Alunbar$Bird(com.google.reflection.Alunbar,java.lang.String,int)]
+        System.out.println(Arrays.toString(constructors));
 
 
     }
 
-    private class Bird{
+    private class Bird extends Animals {
 
+        private String name; //鸟名字
+        private int age; //鸟年龄
 
+        //定义构造器
+        public Bird(){
 
+        }
+
+        public Bird(String name, int age) {
+            this.name = name;
+            this.age = age;
+        }
     }
 
+    private class Animals{
 
+    }
 
 
 }
