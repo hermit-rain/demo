@@ -1,4 +1,4 @@
-package com.google.reflection;
+package com.google.reflect;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Modifier;
@@ -6,14 +6,16 @@ import java.util.Arrays;
 
 /**
  * 描述java反射
- * java反射可以在运行时无需知道类的名字、方法名等就可以检测类 接口 方法和变量等信息
- *
+ * <p>
+ * 反射机制是在运行状态中，对任意的一个类，都能够知道这个类的所有属性和方法
+ * 对于任意一个对象，都能够调用它的任意书方法和属性
+ * 这种动态获取信息以及动态调用对象方法的功能称为java语言的反射机制
+ * <p>
  * Class类
  * 检查一个类之前 必须获取到 java.lang.Class 对象
  * java提供两种方式获取到Class类
  * 1).class ==> 在编译的时候知道具体的类
  * 2).使用Class.forName() ==> 运行时动态的获取Class类 只需要将类名作为forName方法的参数即可
- *
  */
 
 public class Alunbar {
@@ -32,7 +34,7 @@ public class Alunbar {
         System.out.println(Modifier.isPublic(alunbarClass.getModifiers())); //true
         System.out.println(Modifier.isAbstract(alunbarClass.getModifiers())); //false
 
-        Class birdClass =  Bird.class;
+        Class birdClass = Bird.class;
         System.out.println(birdClass.getModifiers()); // 2 => private
         //获取Bird类的修饰符
         System.out.println(Modifier.isPublic(birdClass.getModifiers())); //false
@@ -58,7 +60,6 @@ public class Alunbar {
         //[public com.google.reflection.Alunbar$Bird(com.google.reflection.Alunbar), public com.google.reflection.Alunbar$Bird(com.google.reflection.Alunbar,java.lang.String,int)]
         System.out.println(Arrays.toString(constructors));
 
-
     }
 
     private class Bird extends Animals {
@@ -67,7 +68,7 @@ public class Alunbar {
         private int age; //鸟年龄
 
         //定义构造器
-        public Bird(){
+        public Bird() {
 
         }
 
@@ -77,7 +78,7 @@ public class Alunbar {
         }
     }
 
-    private class Animals{
+    private class Animals {
 
     }
 
