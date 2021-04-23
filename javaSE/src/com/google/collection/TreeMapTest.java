@@ -1,4 +1,4 @@
-package com.google;
+package com.google.collection;
 
 import java.util.TreeMap;
 
